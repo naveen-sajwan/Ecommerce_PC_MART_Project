@@ -22,7 +22,7 @@ const Admin_getSingleProduct = () => {
 
       try {
 
-        const res = await API.get(`/api/products/${id}`);
+        const res = await API.get(`/products/${id}`);
 
         setProduct(res.data);
 

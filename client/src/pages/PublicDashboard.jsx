@@ -12,7 +12,7 @@ const PublicDashboard = () => {
 
   const handleLogout = async()=>{
     try{
-      await API.post(`http://localhost:5000/api/logout`,{withCredentials: true});
+      await API.post(`/logout`,{withCredentials: true});
       dispatch(logout());
       navigate("/login");
     } catch (error) {

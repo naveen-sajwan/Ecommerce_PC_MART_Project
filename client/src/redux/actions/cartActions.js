@@ -11,7 +11,7 @@ import {
 export const fetchCart = () => async(dispatch) => {
     try{
         dispatch(setLoading(true));
-        const {data} = await API.get("/api/cart");
+        const {data} = await API.get("/cart");
         dispatch(setCart(data.items))
     }catch(error){
         dispatch(setError(
@@ -26,7 +26,7 @@ export const fetchCart = () => async(dispatch) => {
 export const addToCart = (productId,quantity) => async(dispatch) => {
     try{
         dispatch(setLoading(true));
-        const {data} = await API.post(`/api/cart`,{productId,quantity});
+        const {data} = await API.post(`/cart`,{productId,quantity});
         console.log("Add to Cart Data:", data);
         dispatch(setCart(data.items));
     }catch(error){
@@ -43,7 +43,7 @@ export const removeFromCart = (productId) => async(dispatch) => {
     dispatch(removeCartItem(productId));
     try{
         dispatch(setLoading(true));     
-        const {data} = await API.delete(`/api/cart/${productId}`);
+        const {data} = await API.delete(`/cart/${productId}`);
     }catch(error){
         dispatch(setError(
             error.response?.data?.message ||
@@ -57,7 +57,7 @@ export const removeFromCart = (productId) => async(dispatch) => {
 export const updateCartQuantity = (productId,quantity) => async(dispatch)=>{
     dispatch(updateCartItem({productId, quantity}));
     try{
-        const {data} = await API.put(`/api/cart/${productId}`,{quantity});
+        const {data} = await API.put(`/cart/${productId}`,{quantity});
     }catch(error){
         dispatch(setError(
             error.response?.data?.message ||

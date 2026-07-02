@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from "axios";
 import { toast } from 'react-toastify';
+import API from "../utils/axios.js";
 
 const Register = () => {
 
@@ -25,7 +26,7 @@ const Register = () => {
     setError("")
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/register`,formData);
+      const response = await API.post(`/register`,formData);
       console.log(response.data);
       if(response.data.message === "User Created"){
         return toast.success(response.data.message);

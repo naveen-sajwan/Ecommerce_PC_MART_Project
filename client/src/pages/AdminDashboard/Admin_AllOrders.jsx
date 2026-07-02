@@ -7,7 +7,7 @@ const Admin_AllOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await API.get("/api/orders");
+      const { data } = await API.get("/orders");
       setOrders(data);
       console.log(data)
     } catch (error) {
@@ -29,7 +29,7 @@ const Admin_AllOrders = () => {
   ) => {
     try {
       await API.put(
-        `/api/orders/${orderId}`,
+        `/orders/${orderId}`,
         { orderStatus }
       );
 

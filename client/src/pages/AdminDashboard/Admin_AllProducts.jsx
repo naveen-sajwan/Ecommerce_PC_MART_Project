@@ -6,6 +6,7 @@ import { MdUpdate } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API from "../../utils/axios.js";
 
 const Admin_AllProducts = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Admin_AllProducts = () => {
 
   const handleDeleteProduct = async(id) => {
     try{
-      await axios.delete(`http://localhost:5000/api/products/${id}`,{withCredentials: true});
+      await API.delete(`/products/${id}`,{withCredentials: true});
       setProducts((prevProducts)=>
         prevProducts.filter((product) => product._id !== id)
       );

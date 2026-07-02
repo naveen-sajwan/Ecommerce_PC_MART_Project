@@ -8,7 +8,7 @@ import AuthLayout from "./layouts/AuthLayout"
 import ProtectedRoute from './components/ProtectedRoute';
 import 'react-inner-image-zoom/lib/styles.min.css';
 import { Admin_Add_products, Admin_AllProducts, Admin_getSingleProduct, Admin_UpdateSingleProduct, Admin_AllOrders } from './pages/AdminDashboard/index.js';
-import { Public_getMyOrders, Public_getSingleOrder, Public_myAccount, Public_GetSingleProduct } from './pages/PublicDashboard/index.js';
+import { PaymentSuccess, Public_getMyOrders, Public_getSingleOrder, Public_myAccount, Public_GetSingleProduct } from './pages/PublicDashboard/index.js';
 import { AdminDashboard, PublicDashboard, ContactUs, NotFound, Unauthorized, Wishlist, AllProducts, Cart, Checkout,AboutsUs, Home, Login, Register } from './pages/index.js';
 
 
@@ -64,7 +64,7 @@ if(isAuthLoading){
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="my_orders" element={<Public_getMyOrders/>} />
           <Route path="my_account" element={<Public_myAccount/>} />
-
+          <Route path="/payment-success" element={<PaymentSuccess />} />
         </Route>
       </Route>
 

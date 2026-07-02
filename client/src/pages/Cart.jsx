@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import API from "../utils/axios";
 import {useDispatch} from "react-redux";
@@ -8,6 +9,7 @@ import { loadRazorpay } from "../utils/loadRazorpay";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loading,cartItems,error,totalPrice,totalQuantity} = useSelector((state) => state.cart);
 
   const [shippingAddress, setShippingAddress] = useState({
@@ -42,7 +44,7 @@ const Cart = () => {
       return;
     }
 
-    const {data} = await API.post(`/api/payment/create-order`,
+    const {data} = await API.post(`/payment/create-order`,
       { shippingAddress }
     );
 
@@ -72,12 +74,11 @@ const Cart = () => {
       ) {
 
         await API.post(
-          "/api/payment/verify-payment",
+          "/payment/verify-payment",
           response
         );
 
-        window.location.href =
-          "/payment-success";
+        navigate("/payment-success");
       },
 
       prefill: {

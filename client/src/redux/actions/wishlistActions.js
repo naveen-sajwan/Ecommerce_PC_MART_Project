@@ -13,7 +13,7 @@ export const fetchWishlist = () => async (dispatch) => {
   try {
     dispatch(wishlistRequest());
 
-    const { data } = await API.get("/api/wishlist");
+    const { data } = await API.get("/wishlist");
 
     dispatch(setWishlist(data.products));
 
@@ -35,7 +35,7 @@ export const addToWishlist =
       dispatch(wishlistRequest());
 
       const { data } = await API.post(
-        "/api/wishlist",
+        "/wishlist",
         { productId }
       );
 
@@ -67,7 +67,7 @@ export const removeFromWishlist =
       dispatch(wishlistRequest());
 
       await API.delete(
-        `/api/wishlist/${productId}`
+        `/wishlist/${productId}`
       );
 
       dispatch(

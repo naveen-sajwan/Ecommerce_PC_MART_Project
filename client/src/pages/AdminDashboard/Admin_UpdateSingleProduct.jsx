@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import { useParams,useNavigate } from 'react-router-dom';
 import "./Update_Product.css"
+import API from "../../utils/axios.js";
 
 const Admin_UpdateSingleProduct = () => {
     const { id } = useParams();
@@ -20,7 +21,7 @@ const Admin_UpdateSingleProduct = () => {
     useEffect(()=>{  
         const fetchProduct = async()=>{
             try{
-                const {data} = await axios.get(`http://localhost:5000/api/products/${id}`,{withCredentials: true});
+                const {data} = await API.get(`/products/${id}`,{withCredentials: true});
                 setFormData({
                     name: data.name,
                     description: data.description,
@@ -46,7 +47,7 @@ const Admin_UpdateSingleProduct = () => {
     e.preventDefault();
     setLoading(true)
     try{
-      await axios.put(`http://localhost:5000/api/products/${id}`,formData,{withCredentials: true});
+      await API.put(`/products/${id}`,formData,{withCredentials: true});
       alert("Product updated successfully!");
     }catch(error){
       console.log(error);
