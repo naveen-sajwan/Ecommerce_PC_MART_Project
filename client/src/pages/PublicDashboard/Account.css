@@ -1,0 +1,122 @@
+.account-page {
+  min-height: 100vh;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.account-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.account-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.account-card {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-box label {
+  display: block;
+  color: #666;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.info-box p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+}
+
+.update-btn {
+  width: fit-content;
+  padding: 12px 24px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.update-btn:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .user-info {
+    grid-template-columns: 1fr;
+  }
+
+  .account-heading {
+    font-size: 28px;
+  }
+
+  .account-card {
+    padding: 20px;
+  }
+
+  .update-btn {
+    width: 100%;
+  }
+}
+
+.eye-icon{
+  position: absolute;
+  top: 40px;
+  right: 12px;
+}
