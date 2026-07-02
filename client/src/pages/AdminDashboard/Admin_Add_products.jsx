@@ -61,7 +61,7 @@ const Admin_Add_products = () => {
         data.append("images", image);
       });
 
-      const response = await axios.post("http://localhost:5000/api/products",
+      const response = await API.post("/products",
         data,
         {
           headers: {

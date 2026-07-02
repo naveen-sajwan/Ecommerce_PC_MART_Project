@@ -26,7 +26,7 @@ export const getProductsAPI = async ({
 
   queryParams.append("limit", limit);
 
-  const res = await API.get(`/api/products?${queryParams.toString()}`);
+  const res = await API.get(`/products?${queryParams.toString()}`);
 
   return res.data;
 };

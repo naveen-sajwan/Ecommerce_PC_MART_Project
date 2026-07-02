@@ -5,7 +5,7 @@ import { setUser,logout } from "../slices/authSlice";
 export const fetchUser = () => async (dispatch) => {
 
   try {
-    const res = await API.get("/api/me");
+    const res = await API.get("/me");
     dispatch(setUser(res.data));
   } catch (error) {
     console.log(error);

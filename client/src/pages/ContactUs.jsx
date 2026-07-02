@@ -33,7 +33,7 @@ const ContactUs = () => {
         }
 
         try {
-            await API.post(`/api/contact/sendMail`,inputs)
+            await API.post(`/contact/sendMail`,inputs)
             .then((response)=>{
                 if(response.data.msg==="Email Sent Successfully"){
                     toast.success(response.data.msg);

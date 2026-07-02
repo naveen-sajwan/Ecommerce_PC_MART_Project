@@ -26,7 +26,7 @@ const Login = () => {
     setError("");
     setLoading(true)
     try {
-      const response = await axios.post(`http://localhost:5000/api/login`,loginForm,{withCredentials: true});
+      const response = await API.post(`/login`,loginForm,{withCredentials: true});
       console.log(response.data)
       if(response.data.message === "Signed-In Successfully"){
         const user = response.data.user;
