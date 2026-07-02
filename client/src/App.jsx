@@ -64,7 +64,7 @@ if(isAuthLoading){
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="my_orders" element={<Public_getMyOrders/>} />
           <Route path="my_account" element={<Public_myAccount/>} />
-          <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="payment-success" element={<PaymentSuccess />} />
         </Route>
       </Route>
 
