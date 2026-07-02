@@ -35,6 +35,7 @@ if(isAuthLoading){
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="product/:id" element={<Public_GetSingleProduct />}/>
           <Route path="wishlist" element={<Wishlist />} />
+          <Route path="payment-success" element={<PaymentSuccess />} />
         </Route>
 
         <Route element={<AuthLayout />}>

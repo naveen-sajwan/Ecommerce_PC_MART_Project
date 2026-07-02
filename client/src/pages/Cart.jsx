@@ -78,7 +78,7 @@ const Cart = () => {
           response
         );
 
-        navigate("/payment-success");
+        navigate("/public/payment-success");
       },
 
       prefill: {
