@@ -1,6 +1,5 @@
 import Product from "../models/Product.js";
-import fs from "fs";
-import cloudinary from "../config/cloudinary.js";
+import cloudinary,{ uploadBuffer } from "../config/cloudinary.js";
 
 // Get all products
 export const getProducts = async (req, res) => {
@@ -89,17 +88,12 @@ export const createProduct = async (req, res) => {
   try{
     let images = [];
     for(const file of req.files){
-      const result = await cloudinary.uploader.upload(
-        file.path,
-        { folder: "ecommerce/products" }
-      );
+      const result = await uploadBuffer(file.buffer);
       images.push({
         public_id: result.public_id,
         url: result.secure_url,
       });
       
-      // Delete temporary local file
-      fs.unlinkSync(file.path);
     }
 
     const product = await Product.create({
