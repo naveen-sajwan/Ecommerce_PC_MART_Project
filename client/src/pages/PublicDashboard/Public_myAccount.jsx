@@ -3,6 +3,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import axios from "axios";
 import "./Account.css";
 import { FaRegEye,FaRegEyeSlash } from "react-icons/fa";
+import API from "../../utils/axios.js";
 
 const Public_myAccount = () => {
 
@@ -42,7 +43,7 @@ const Public_myAccount = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/change-password`,
+      const response = await API.put(`/change-password`,
         formData,{
           withCredentials: true,
         });

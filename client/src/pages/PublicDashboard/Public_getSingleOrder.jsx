@@ -11,7 +11,7 @@ const Public_getSingleOrder = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const { data } = await API.get(`/api/orders/${id}`);
+                const { data } = await API.get(`/orders/${id}`);
                 setOrders(data);
                 console.log(data)
             } catch (error) {

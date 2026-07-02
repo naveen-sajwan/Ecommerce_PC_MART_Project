@@ -15,7 +15,7 @@ const Public_getMyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await API.get(`/api/orders/my-orders`);
+      const { data } = await API.get(`/orders/my-orders`);
       setOrders(data);
       console.log(data)
     } catch (error) {

@@ -26,7 +26,7 @@ const Public_GetSingleProduct = () => {
 
     const fetchProduct = async () => {
       try {
-        const res = await API.get(`/api/products/${id}`);
+        const res = await API.get(`/products/${id}`);
         setProduct(res.data);
       } catch (error) {
         console.log(error);
